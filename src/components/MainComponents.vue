@@ -31,10 +31,10 @@ import {store} from '../store.js';
         },
         methods:{
             changecolor(index){
-                this.$refs.square.style.backgroundColor = this.store.colors[index].hex;
-                this.label =this.store.colors[index].label
-                this.hex =this.store.colors[index].hex
-                this.palette_name =this.store.colors[index].palette_name
+                this.$refs.square.style.backgroundColor = this.arrayFilter[index].hex;
+                this.label =this.arrayFilter[index].label
+                this.hex =this.arrayFilter[index].hex
+                this.palette_name =this.arrayFilter[index].palette_name
 
             },
             filter(event){
