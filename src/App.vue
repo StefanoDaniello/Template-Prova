@@ -16,5 +16,5 @@ import MainComponents from './components/MainComponents.vue'
 </script>
 
 <style lang="scss" scoped>
-
+  
 </style>
