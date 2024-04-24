@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex justify-content-center align-content-center m-2">
-        <div v-for="(circle, index) in store.colors" :key="index">
+        <div v-for="(circle, index) in arrayFilter" :key="index">
             <div class="circle" :style="{'backgroundColor': circle.hex}" @click="$emit('changecolor', index)">
             </div>
         </div>
@@ -12,10 +12,16 @@
     import  {store} from '../store.js'
     export default {
         name: 'Circlecomp',
+        props: {
+            arrayFilter: Array,
+        },
         data(){
             return{
-                store
+                store,
             }
+        },
+        mounted(){
+            console.log(this.arrayFilter);
         },
         
     }
