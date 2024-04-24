@@ -2,7 +2,11 @@
     <main class="container ">
         <FilterComp @filter="filter"/>
         <Circlecomp @changecolor="changecolor" :arrayFilter="arrayFilter"/>
-        <div class="square" ref="square"></div>
+        <div class="square text-center" ref="square">
+            <h1>{{label}}</h1>
+            <h3>{{hex}}</h3>
+            <h3>{{palette_name}}</h3>
+        </div>
     </main>
 </template>
 
@@ -20,12 +24,18 @@ import {store} from '../store.js';
             return{
                 store,
                 arrayFilter: [],
-                prova: 'prova'
+                label: '',
+                hex: '',
+                palette_name: ''
             }
         },
         methods:{
             changecolor(index){
                 this.$refs.square.style.backgroundColor = this.store.colors[index].hex;
+                this.label =this.store.colors[index].label
+                this.hex =this.store.colors[index].hex
+                this.palette_name =this.store.colors[index].palette_name
+
             },
             filter(event){
                 this.arrayFilter = [];
