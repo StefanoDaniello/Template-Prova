@@ -1,11 +1,17 @@
 <template>
-  <h1 class="text-center">Ciao</h1>
-  <i class="fa fa-solid fa-home"></i>
+  <HeaderComponent/>
+  <MainComponents/>
 </template>
 
 <script>
+import HeaderComponent from './components/HeaderComponent.vue'
+import MainComponents from './components/MainComponents.vue'
   export default {
-    name: 'App'
+    name: 'App',
+    components: {
+      HeaderComponent,
+      MainComponents
+    }
   }
 </script>
 
